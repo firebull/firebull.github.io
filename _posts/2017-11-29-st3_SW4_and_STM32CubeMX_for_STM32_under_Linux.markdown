@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title:  "Настройка Sublime Text 3, SW4 и STM32CubeMX для разработки STM32 под Linux"
-date:   2017-11-28 17:32:10 +0300
+date:   2017-11-29 17:32:10 +0300
 categories: stm32 sublime-text-3 SW4STM32
 ---
 
