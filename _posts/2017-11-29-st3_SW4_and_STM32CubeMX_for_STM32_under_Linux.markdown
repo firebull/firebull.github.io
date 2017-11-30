@@ -65,7 +65,7 @@ sudo apt install default-jre
 
 Скачиваем [дистрибутив](http://www.st.com/en/development-tools/stm32cubemx.html#getsoftware-scroll) с сайта ST (потребуется регистрация), разархивируем и запустим файл с расширением *.linux*. Если установщик не запускается, скорее всего не установлены 32-битные библиотеки. Путь установки меняем на **/home/bulkin/Programs/STM32CubeMX**, устанавливаем.
 
-![](https://habrastorage.org/webt/p9/vz/fy/p9vzfydu7cvhvk1miffounrf7si.png)
+![](/assets/img/stm32-linux-ide/CubeMX-install-1.png)
 
 #### Создадим красивый ярлык и добавим поиск в Dash
 ```bash
@@ -89,11 +89,11 @@ Categories=Utility;Application;
 
 Запускаем STM32CubeMX, идём в настройки **Help->Updater Settings** и меняем путь для хранения библиотек на */opt/libs/STM32Cube/Repository/*
 
-![](https://habrastorage.org/webt/re/i8/lo/rei8loxxxqixijh_jn8sw8o_4bu.png)
+![](/assets/img/stm32-linux-ide/CubeMX-install-2.png)
 
 Установим библиотеку для STM32F3. Открываем **Help->Install New Libriaries**, ставим галку  *Firmware Package for Family STM32F3*, жмём **Install Now**
 
-![](https://habrastorage.org/webt/hq/ll/ux/hqlluxeerb8krhkvvekdqynfjxo.png)
+![](/assets/img/stm32-linux-ide/CubeMX-install-3.png)
 
 ## Устанавливаем Sublime Text 3
 Вообще, SW4 вполне самодостаточная IDE. Но я люблю кодить именно в ST3, а компиляция и дебаг в SW4. Инструкция по установке ST3 для любых дистрибутивов лежит [тут](https://www.sublimetext.com/docs/3/linux_repositories.html).
@@ -118,7 +118,7 @@ sudo pip install cubemx2cmake
 import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 
-![](https://habrastorage.org/webt/v0/xx/db/v0xxdb7m653kbartrv38kxbqphm.png)
+![](/assets/img/stm32-linux-ide/Sublime-install-1.png)
 
 Для полноценной работы нам понадобятся такие пакеты:
 - ARM Assembly (Подсветка Assembler в коде)
@@ -296,7 +296,7 @@ http://eclipse-color-theme.github.io/update/
 ```
 Жмём ОК, выбираем *Eclipse Color Theme* и жмём **Next >** и дальше всё по накатанной.
 
-![](https://habrastorage.org/webt/ge/yi/hy/geyihy8pruka1oxg00_ekblj2jy.png)
+![](/assets/img/stm32-linux-ide/Eclipse-install-1.png)
 
 Включим тему: **Window -> Preferences ->Appearance -> Color Theme**. Я люблю Monokai, а вы можете позже подобрать, какую вам нравится.
 
@@ -310,7 +310,7 @@ http://eclipse-color-theme.github.io/update/
 - MCU Series: STM32F3
 - Из списка ниже выбираем STM32F3DISCOVERY
 
-![](https://habrastorage.org/webt/g3/kj/t1/g3kjt146p2bvhdntn2yap0dnsum.png)
+![](/assets/img/stm32-linux-ide/CubeMX-Create-STM32F3Disco-1.png)
 
 И два щелчка на нашей плате.
 
@@ -320,7 +320,7 @@ http://eclipse-color-theme.github.io/update/
 - SYS: Trace Asynchronous Sw
 - Timebase Source: TIM17 (на текущем этапе можно выбрать любой)
 
-![](https://habrastorage.org/webt/y8/fa/7z/y8fa7zmx10gwb8mpiqyo8l3vox8.png)
+![](/assets/img/stm32-linux-ide/CubeMX-Create-STM32F3Disco-2.png)
 
 Переходим во вкладку Clock Configuration:
 - В поле HCLK вводим 64МГц (на встроенном осциляторе максимальная частота)
@@ -331,11 +331,11 @@ http://eclipse-color-theme.github.io/update/
 - Указываем путь в поле *Project Location*: /home/bulkin/workspace
 - Выбираем Toolchain: SW4STM32
 
-![](https://habrastorage.org/webt/6h/8q/wq/6h8qwqxomdhtynic5vve3iwwjf0.png)
+![](/assets/img/stm32-linux-ide/CubeMX-Create-STM32F3Disco-3.png)
 
 Откроем вкладку **Code Generator** и включим "Add necessary libriary files as reference in the toolchain project configuration file"
 
-![](https://habrastorage.org/webt/4l/wb/id/4lwbidfrcyxkpo2hdwwphri-8zk.png)
+![](/assets/img/stm32-linux-ide/CubeMX-Create-STM32F3Disco-4.png)
 
 Жмём **ОК** и теперь мы готовы создать проект. Жмите Generate Source Code в верхнем меню:
 ![](/assets/img/stm32-linux-ide/CubeMX-Compile-Button.png)
@@ -347,7 +347,7 @@ cubemx2cmake
 ```
 Из нашего **STM32Discovery-SW4-Test.ioc** будут созданы необходимые для компиляции из командной строки файлы. Но нас интересует только **CMakeLists.txt.template**. Переименуем его в **CMakeLists.txt**.
 
-![](https://habrastorage.org/webt/ez/yi/5l/ezyi5lszyrujeogeonmgysbwqb0.png)
+![](/assets/img/stm32-linux-ide/ST3-cubemx2cmake.png)
 
 **Project->Add folder to Project...** и выбираем папку нашего нового проекта.
 Для начала надо добавить в *CMakeList.txt* недостающие пути к библиотекам. Это нужно для корректной работы *EasyClangComplete*. Слева щёлкаем на *CMakeList.txt* и вносим изменения:
@@ -441,7 +441,7 @@ add_custom_command(TARGET flash POST_BUILD COMMENT "Flashing finished!")
     - Select root directory: /home/bulkin/workspace/STM32Discovery-SW4-Test
     - НЕ ставим галку Copy projects into workspace
 
-![](https://habrastorage.org/webt/mb/wa/-l/mbwa-lxvejwbom76manmkghlebc.png)
+![](/assets/img/stm32-linux-ide/eclipse-import-project.png)
 
 Жмём Finish.
 
@@ -473,14 +473,14 @@ verified 8748 bytes in 0.104648s (81.635 KiB/s)
 
 Изначально наша программа будет остановлена на ```int main(void) {}```, это брейкпонт по-умолчанию. Запустим программу нажав F8, чтобы инициализировались все настройки МК, потом остановим, нажав кнопку *Pause* в верхней панели. Давайте попробуем зажечь светодиоды. В правой верхней части перспективы откроем вкладку **I/O Registers**, развернём GPIO и правый щелчок на **GPIOE -> ODR -> Activate**
 
-![](https://habrastorage.org/webt/gi/4f/ng/gi4fnguvjnri7oweey8s_o3ol_8.png)
+![](/assets/img/stm32-linux-ide/eclipse-debug-io-registers-1.png)
 
 Теперь посмотрим в STM32CubeMX в нашем проекте, что светодиоды сидят на ногах PE8 - PE15:
-![](https://habrastorage.org/webt/qv/wf/58/qvwf58a9eauc0yc0zyuxzeqiqti.png)
+![](/assets/img/stm32-linux-ide/STMF3DiscoveryLedPins.png)
 
 В столбце HEX Value в строках c **GPIOE -> ODR -> ODR15** по **GPIOE -> ODR -> ODR8** выставим **1** и радуемся магии, как загораются светодиоды на плате. Ставим **0** - гаснут.
 
-![](https://habrastorage.org/webt/xq/dt/9c/xqdt9cr0fms-gfxjxhpr88e0vk0.png)
+![](/assets/img/stm32-linux-ide/eclipse-debug-io-registers-2.png)
 
 К сожалению, такая магия возможно только в остановленном состоянии, в отличие от того же Keil uVision, реалтайма тут нет. ~~(грустный смайлик)~~
 
