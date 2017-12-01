@@ -290,6 +290,9 @@ http://eclipse-color-theme.github.io/update/
 -ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Drivers\STM32F3xx_HAL_Driver\Inc
 -ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Middlewares\Third_Party\FreeRTOS\Source\include
 ```
+
+Сохраним файл под именем **.clang_complete** (прям так, с точкой в начале имени).
+
 Теперь надо сбросить кэш Cmake: **CTRL-SHIFT-P -> EasyClangComplete: Clean current cmake cache**
 
 Откроем **Src/main.c**. Наведём курсор на какую-нибудь функцию и порадуемся всплывающим окошкам с её описанием. Подробнее о работе EasyClangComplete можно посмотреть [тут](https://github.com/niosus/EasyClangComplete).
