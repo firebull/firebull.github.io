@@ -284,7 +284,7 @@ http://eclipse-color-theme.github.io/update/
 
 В открывшемся окне вставьте актуальные пути к библиотекам HAL:
 ```bash
--ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Drivers\CMSIS\Device\STTM32F3xx\Include
+-ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Drivers\CMSIS\Device\STM32F3xx\Include
 -ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Drivers\CMSIS\Include
 -ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS
 -ID:\Libs\STM32Cube\Repository\STM32Cube_FW_F3_V1.9.0\Drivers\STM32F3xx_HAL_Driver\Inc
