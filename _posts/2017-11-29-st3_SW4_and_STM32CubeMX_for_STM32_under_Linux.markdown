@@ -343,7 +343,7 @@ http://eclipse-color-theme.github.io/update/
 ![](/assets/img/stm32-linux-ide/CubeMX-Compile-Button.png)
 
 #### Проверим Sublime Text 3
-Для начала надо создать CMakeList.txt. Для этого открываем консоль в корне нашего проекта и вводим:
+Для начала надо создать CMakeLists.txt. Для этого открываем консоль в корне нашего проекта и вводим:
 ```bash
 cubemx2cmake
 ```
@@ -352,7 +352,7 @@ cubemx2cmake
 ![](/assets/img/stm32-linux-ide/ST3-cubemx2cmake.png)
 
 **Project->Add folder to Project...** и выбираем папку нашего нового проекта.
-Для начала надо добавить в *CMakeList.txt* недостающие пути к библиотекам. Это нужно для корректной работы *EasyClangComplete*. Слева щёлкаем на *CMakeList.txt* и вносим изменения:
+Для начала надо добавить в *CMakeLists.txt* недостающие пути к библиотекам. Это нужно для корректной работы *EasyClangComplete*. Слева щёлкаем на *CMakeLists.txt* и вносим изменения:
 Над строкой ```set(USER_INCLUDE Inc)``` добавляем:
 ```
 set(STM32CUBEREPO /opt/libs/STM32Cube/Repository/STM32Cube_FW_F3_V1.9.0)
