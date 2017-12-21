@@ -22,7 +22,7 @@ layout: default
         </h2>
 
         <span>{{ post.excerpt | markdownify | truncatewords: 100 }}</span>
-
+        <p><a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">Читать далее...</a></p>
       </li>
     {% endfor %}
   </ul>
